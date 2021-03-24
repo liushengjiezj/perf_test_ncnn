@@ -1,0 +1,4 @@
+7767517
+2 2
+Input                             data                        0 1 data 0=19 1=19 2=1024
+BatchNorm                         bn                          1 1 data output 0=1024

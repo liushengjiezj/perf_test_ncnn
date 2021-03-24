@@ -1,0 +1,15 @@
+7767517
+13 13
+Input                    data                     0 1 data 0=224 1=224 2=3
+Convolution              alexnet0_conv0_fwd       1 1 data alexnet0_conv0_relu_fwd 0=64 1=11 3=4 4=2 5=1 6=23232 8=2 9=1
+Pooling                  alexnet0_pool0_fwd       1 1 alexnet0_conv0_relu_fwd alexnet0_pool0_fwd 1=3 2=2 5=1
+Convolution              alexnet0_conv1_fwd       1 1 alexnet0_pool0_fwd alexnet0_conv1_relu_fwd 0=192 1=5 4=2 5=1 6=307200 8=2 9=1
+Pooling                  alexnet0_pool1_fwd       1 1 alexnet0_conv1_relu_fwd alexnet0_pool1_fwd 1=3 2=2 5=1
+Convolution              alexnet0_conv2_fwd       1 1 alexnet0_pool1_fwd alexnet0_conv2_relu_fwd 0=384 1=3 4=1 5=1 6=663552 8=2 9=1
+Convolution              alexnet0_conv3_fwd       1 1 alexnet0_conv2_relu_fwd alexnet0_conv3_relu_fwd 0=256 1=3 4=1 5=1 6=884736 8=2 9=1
+Convolution              alexnet0_conv4_fwd       1 1 alexnet0_conv3_relu_fwd alexnet0_conv4_relu_fwd 0=256 1=3 4=1 5=1 6=589824 8=2 9=1
+Pooling                  alexnet0_pool2_fwd       1 1 alexnet0_conv4_relu_fwd alexnet0_pool2_fwd 1=3 2=2 5=1
+Flatten                  alexnet0_flatten0_flatten0 1 1 alexnet0_pool2_fwd alexnet0_flatten0_flatten0
+InnerProduct             alexnet0_dense0_fwd      1 1 alexnet0_flatten0_flatten0 alexnet0_dropout0_fwd 0=4096 1=1 2=37748736 8=2 9=1
+InnerProduct             alexnet0_dense1_fwd      1 1 alexnet0_dropout0_fwd alexnet0_dropout1_fwd 0=4096 1=1 2=16777216 8=2 9=1
+InnerProduct             alexnet0_dense2_fwd      1 1 alexnet0_dropout1_fwd output 0=1000 1=1 2=4096000 8=2

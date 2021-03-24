@@ -1,0 +1,4 @@
+7767517
+2 2
+Input                             data                        0 1 data 0=7 1=7 2=1000
+InnerProduct                      fc7                         1 1 data output 0=1000 1=1 2=49000000

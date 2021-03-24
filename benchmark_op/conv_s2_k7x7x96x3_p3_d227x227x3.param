@@ -1,0 +1,4 @@
+7767517
+2 2
+Input                    data                     0 1 data 0=227 1=227 2=3
+Convolution              conv1                    1 1 data output 0=96 1=7 3=2 4=3 5=1 6=14112

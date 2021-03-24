@@ -1,0 +1,4 @@
+7767517
+2 2
+Input                             data                        0 1 data 0=112 1=112 2=4
+Sigmoid                           sig                         1 1 data output

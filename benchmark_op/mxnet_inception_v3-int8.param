@@ -1,0 +1,142 @@
+7767517
+140 175
+Input                    data                     0 1 data 0=224 1=224 2=3
+Convolution              inception30_conv0_fwd    1 1 data inception30_relu0_fwd 0=32 1=3 3=2 5=1 6=864 8=2 9=1
+Convolution              inception30_conv1_fwd    1 1 inception30_relu0_fwd inception30_relu1_fwd 0=32 1=3 5=1 6=9216 8=2 9=1
+Convolution              inception30_conv2_fwd    1 1 inception30_relu1_fwd inception30_relu2_fwd 0=64 1=3 4=1 5=1 6=18432 8=2 9=1
+Pooling                  inception30_pool0_fwd    1 1 inception30_relu2_fwd inception30_pool0_fwd 1=3 2=2 5=1
+Convolution              inception30_conv3_fwd    1 1 inception30_pool0_fwd inception30_relu3_fwd 0=80 1=1 5=1 6=5120 8=2 9=1
+Convolution              inception30_conv4_fwd    1 1 inception30_relu3_fwd inception30_relu4_fwd 0=192 1=3 5=1 6=138240 8=2 9=1
+Pooling                  inception30_pool1_fwd    1 1 inception30_relu4_fwd inception30_pool1_fwd 1=3 2=2 5=1
+Split                    splitncnn_0              1 4 inception30_pool1_fwd inception30_pool1_fwd_splitncnn_0 inception30_pool1_fwd_splitncnn_1 inception30_pool1_fwd_splitncnn_2 inception30_pool1_fwd_splitncnn_3
+Convolution              inception30_A1_conv0_fwd 1 1 inception30_pool1_fwd_splitncnn_3 inception30_A1_relu0_fwd 0=64 1=1 5=1 6=12288 8=2 9=1
+Convolution              inception30_A1_conv1_fwd 1 1 inception30_pool1_fwd_splitncnn_2 inception30_A1_relu1_fwd 0=48 1=1 5=1 6=9216 8=2 9=1
+Convolution              inception30_A1_conv2_fwd 1 1 inception30_A1_relu1_fwd inception30_A1_relu2_fwd 0=64 1=5 4=2 5=1 6=76800 8=2 9=1
+Convolution              inception30_A1_conv3_fwd 1 1 inception30_pool1_fwd_splitncnn_1 inception30_A1_relu3_fwd 0=64 1=1 5=1 6=12288 8=2 9=1
+Convolution              inception30_A1_conv4_fwd 1 1 inception30_A1_relu3_fwd inception30_A1_relu4_fwd 0=96 1=3 4=1 5=1 6=55296 8=2 9=1
+Convolution              inception30_A1_conv5_fwd 1 1 inception30_A1_relu4_fwd inception30_A1_relu5_fwd 0=96 1=3 4=1 5=1 6=82944 8=2 9=1
+Pooling                  inception30_A1_pool0_fwd 1 1 inception30_pool1_fwd_splitncnn_0 inception30_A1_pool0_fwd 0=1 1=3 3=1 5=1
+Convolution              inception30_A1_conv6_fwd 1 1 inception30_A1_pool0_fwd inception30_A1_relu6_fwd 0=32 1=1 5=1 6=6144 8=2 9=1
+Concat                   inception30_A1_concat0   4 1 inception30_A1_relu0_fwd inception30_A1_relu2_fwd inception30_A1_relu5_fwd inception30_A1_relu6_fwd inception30_A1_concat0
+Split                    splitncnn_1              1 4 inception30_A1_concat0 inception30_A1_concat0_splitncnn_0 inception30_A1_concat0_splitncnn_1 inception30_A1_concat0_splitncnn_2 inception30_A1_concat0_splitncnn_3
+Convolution              inception30_A2_conv0_fwd 1 1 inception30_A1_concat0_splitncnn_3 inception30_A2_relu0_fwd 0=64 1=1 5=1 6=16384 8=2 9=1
+Convolution              inception30_A2_conv1_fwd 1 1 inception30_A1_concat0_splitncnn_2 inception30_A2_relu1_fwd 0=48 1=1 5=1 6=12288 8=2 9=1
+Convolution              inception30_A2_conv2_fwd 1 1 inception30_A2_relu1_fwd inception30_A2_relu2_fwd 0=64 1=5 4=2 5=1 6=76800 8=2 9=1
+Convolution              inception30_A2_conv3_fwd 1 1 inception30_A1_concat0_splitncnn_1 inception30_A2_relu3_fwd 0=64 1=1 5=1 6=16384 8=2 9=1
+Convolution              inception30_A2_conv4_fwd 1 1 inception30_A2_relu3_fwd inception30_A2_relu4_fwd 0=96 1=3 4=1 5=1 6=55296 8=2 9=1
+Convolution              inception30_A2_conv5_fwd 1 1 inception30_A2_relu4_fwd inception30_A2_relu5_fwd 0=96 1=3 4=1 5=1 6=82944 8=2 9=1
+Pooling                  inception30_A2_pool0_fwd 1 1 inception30_A1_concat0_splitncnn_0 inception30_A2_pool0_fwd 0=1 1=3 3=1 5=1
+Convolution              inception30_A2_conv6_fwd 1 1 inception30_A2_pool0_fwd inception30_A2_relu6_fwd 0=64 1=1 5=1 6=16384 8=2 9=1
+Concat                   inception30_A2_concat0   4 1 inception30_A2_relu0_fwd inception30_A2_relu2_fwd inception30_A2_relu5_fwd inception30_A2_relu6_fwd inception30_A2_concat0
+Split                    splitncnn_2              1 4 inception30_A2_concat0 inception30_A2_concat0_splitncnn_0 inception30_A2_concat0_splitncnn_1 inception30_A2_concat0_splitncnn_2 inception30_A2_concat0_splitncnn_3
+Convolution              inception30_A3_conv0_fwd 1 1 inception30_A2_concat0_splitncnn_3 inception30_A3_relu0_fwd 0=64 1=1 5=1 6=18432 8=2 9=1
+Convolution              inception30_A3_conv1_fwd 1 1 inception30_A2_concat0_splitncnn_2 inception30_A3_relu1_fwd 0=48 1=1 5=1 6=13824 8=2 9=1
+Convolution              inception30_A3_conv2_fwd 1 1 inception30_A3_relu1_fwd inception30_A3_relu2_fwd 0=64 1=5 4=2 5=1 6=76800 8=2 9=1
+Convolution              inception30_A3_conv3_fwd 1 1 inception30_A2_concat0_splitncnn_1 inception30_A3_relu3_fwd 0=64 1=1 5=1 6=18432 8=2 9=1
+Convolution              inception30_A3_conv4_fwd 1 1 inception30_A3_relu3_fwd inception30_A3_relu4_fwd 0=96 1=3 4=1 5=1 6=55296 8=2 9=1
+Convolution              inception30_A3_conv5_fwd 1 1 inception30_A3_relu4_fwd inception30_A3_relu5_fwd 0=96 1=3 4=1 5=1 6=82944 8=2 9=1
+Pooling                  inception30_A3_pool0_fwd 1 1 inception30_A2_concat0_splitncnn_0 inception30_A3_pool0_fwd 0=1 1=3 3=1 5=1
+Convolution              inception30_A3_conv6_fwd 1 1 inception30_A3_pool0_fwd inception30_A3_relu6_fwd 0=64 1=1 5=1 6=18432 8=2 9=1
+Concat                   inception30_A3_concat0   4 1 inception30_A3_relu0_fwd inception30_A3_relu2_fwd inception30_A3_relu5_fwd inception30_A3_relu6_fwd inception30_A3_concat0
+Split                    splitncnn_3              1 3 inception30_A3_concat0 inception30_A3_concat0_splitncnn_0 inception30_A3_concat0_splitncnn_1 inception30_A3_concat0_splitncnn_2
+Convolution              inception30_B_conv0_fwd  1 1 inception30_A3_concat0_splitncnn_2 inception30_B_relu0_fwd 0=384 1=3 3=2 5=1 6=995328 8=2 9=1
+Convolution              inception30_B_conv1_fwd  1 1 inception30_A3_concat0_splitncnn_1 inception30_B_relu1_fwd 0=64 1=1 5=1 6=18432 8=2 9=1
+Convolution              inception30_B_conv2_fwd  1 1 inception30_B_relu1_fwd inception30_B_relu2_fwd 0=96 1=3 4=1 5=1 6=55296 8=2 9=1
+Convolution              inception30_B_conv3_fwd  1 1 inception30_B_relu2_fwd inception30_B_relu3_fwd 0=96 1=3 3=2 5=1 6=82944 8=2 9=1
+Pooling                  inception30_B_pool0_fwd  1 1 inception30_A3_concat0_splitncnn_0 inception30_B_pool0_fwd 1=3 2=2 5=1
+Concat                   inception30_B_concat0    3 1 inception30_B_relu0_fwd inception30_B_relu3_fwd inception30_B_pool0_fwd inception30_B_concat0
+Split                    splitncnn_4              1 4 inception30_B_concat0 inception30_B_concat0_splitncnn_0 inception30_B_concat0_splitncnn_1 inception30_B_concat0_splitncnn_2 inception30_B_concat0_splitncnn_3
+Convolution              inception30_C1_conv0_fwd 1 1 inception30_B_concat0_splitncnn_3 inception30_C1_relu0_fwd 0=192 1=1 5=1 6=147456 8=2 9=1
+Convolution              inception30_C1_conv1_fwd 1 1 inception30_B_concat0_splitncnn_2 inception30_C1_relu1_fwd 0=128 1=1 5=1 6=98304 8=2 9=1
+Convolution              inception30_C1_conv2_fwd 1 1 inception30_C1_relu1_fwd inception30_C1_relu2_fwd 0=128 1=7 11=1 4=3 14=0 5=1 6=114688 8=2 9=1
+Convolution              inception30_C1_conv3_fwd 1 1 inception30_C1_relu2_fwd inception30_C1_relu3_fwd 0=192 1=1 11=7 14=3 5=1 6=172032 8=2 9=1
+Convolution              inception30_C1_conv4_fwd 1 1 inception30_B_concat0_splitncnn_1 inception30_C1_relu4_fwd 0=128 1=1 5=1 6=98304 8=2 9=1
+Convolution              inception30_C1_conv5_fwd 1 1 inception30_C1_relu4_fwd inception30_C1_relu5_fwd 0=128 1=1 11=7 14=3 5=1 6=114688 8=2 9=1
+Convolution              inception30_C1_conv6_fwd 1 1 inception30_C1_relu5_fwd inception30_C1_relu6_fwd 0=128 1=7 11=1 4=3 14=0 5=1 6=114688 8=2 9=1
+Convolution              inception30_C1_conv7_fwd 1 1 inception30_C1_relu6_fwd inception30_C1_relu7_fwd 0=128 1=1 11=7 14=3 5=1 6=114688 8=2 9=1
+Convolution              inception30_C1_conv8_fwd 1 1 inception30_C1_relu7_fwd inception30_C1_relu8_fwd 0=192 1=7 11=1 4=3 14=0 5=1 6=172032 8=2 9=1
+Pooling                  inception30_C1_pool0_fwd 1 1 inception30_B_concat0_splitncnn_0 inception30_C1_pool0_fwd 0=1 1=3 3=1 5=1
+Convolution              inception30_C1_conv9_fwd 1 1 inception30_C1_pool0_fwd inception30_C1_relu9_fwd 0=192 1=1 5=1 6=147456 8=2 9=1
+Concat                   inception30_C1_concat0   4 1 inception30_C1_relu0_fwd inception30_C1_relu3_fwd inception30_C1_relu8_fwd inception30_C1_relu9_fwd inception30_C1_concat0
+Split                    splitncnn_5              1 4 inception30_C1_concat0 inception30_C1_concat0_splitncnn_0 inception30_C1_concat0_splitncnn_1 inception30_C1_concat0_splitncnn_2 inception30_C1_concat0_splitncnn_3
+Convolution              inception30_C2_conv0_fwd 1 1 inception30_C1_concat0_splitncnn_3 inception30_C2_relu0_fwd 0=192 1=1 5=1 6=147456 8=2 9=1
+Convolution              inception30_C2_conv1_fwd 1 1 inception30_C1_concat0_splitncnn_2 inception30_C2_relu1_fwd 0=160 1=1 5=1 6=122880 8=2 9=1
+Convolution              inception30_C2_conv2_fwd 1 1 inception30_C2_relu1_fwd inception30_C2_relu2_fwd 0=160 1=7 11=1 4=3 14=0 5=1 6=179200 8=2 9=1
+Convolution              inception30_C2_conv3_fwd 1 1 inception30_C2_relu2_fwd inception30_C2_relu3_fwd 0=192 1=1 11=7 14=3 5=1 6=215040 8=2 9=1
+Convolution              inception30_C2_conv4_fwd 1 1 inception30_C1_concat0_splitncnn_1 inception30_C2_relu4_fwd 0=160 1=1 5=1 6=122880 8=2 9=1
+Convolution              inception30_C2_conv5_fwd 1 1 inception30_C2_relu4_fwd inception30_C2_relu5_fwd 0=160 1=1 11=7 14=3 5=1 6=179200 8=2 9=1
+Convolution              inception30_C2_conv6_fwd 1 1 inception30_C2_relu5_fwd inception30_C2_relu6_fwd 0=160 1=7 11=1 4=3 14=0 5=1 6=179200 8=2 9=1
+Convolution              inception30_C2_conv7_fwd 1 1 inception30_C2_relu6_fwd inception30_C2_relu7_fwd 0=160 1=1 11=7 14=3 5=1 6=179200 8=2 9=1
+Convolution              inception30_C2_conv8_fwd 1 1 inception30_C2_relu7_fwd inception30_C2_relu8_fwd 0=192 1=7 11=1 4=3 14=0 5=1 6=215040 8=2 9=1
+Pooling                  inception30_C2_pool0_fwd 1 1 inception30_C1_concat0_splitncnn_0 inception30_C2_pool0_fwd 0=1 1=3 3=1 5=1
+Convolution              inception30_C2_conv9_fwd 1 1 inception30_C2_pool0_fwd inception30_C2_relu9_fwd 0=192 1=1 5=1 6=147456 8=2 9=1
+Concat                   inception30_C2_concat0   4 1 inception30_C2_relu0_fwd inception30_C2_relu3_fwd inception30_C2_relu8_fwd inception30_C2_relu9_fwd inception30_C2_concat0
+Split                    splitncnn_6              1 4 inception30_C2_concat0 inception30_C2_concat0_splitncnn_0 inception30_C2_concat0_splitncnn_1 inception30_C2_concat0_splitncnn_2 inception30_C2_concat0_splitncnn_3
+Convolution              inception30_C3_conv0_fwd 1 1 inception30_C2_concat0_splitncnn_3 inception30_C3_relu0_fwd 0=192 1=1 5=1 6=147456 8=2 9=1
+Convolution              inception30_C3_conv1_fwd 1 1 inception30_C2_concat0_splitncnn_2 inception30_C3_relu1_fwd 0=160 1=1 5=1 6=122880 8=2 9=1
+Convolution              inception30_C3_conv2_fwd 1 1 inception30_C3_relu1_fwd inception30_C3_relu2_fwd 0=160 1=7 11=1 4=3 14=0 5=1 6=179200 8=2 9=1
+Convolution              inception30_C3_conv3_fwd 1 1 inception30_C3_relu2_fwd inception30_C3_relu3_fwd 0=192 1=1 11=7 14=3 5=1 6=215040 8=2 9=1
+Convolution              inception30_C3_conv4_fwd 1 1 inception30_C2_concat0_splitncnn_1 inception30_C3_relu4_fwd 0=160 1=1 5=1 6=122880 8=2 9=1
+Convolution              inception30_C3_conv5_fwd 1 1 inception30_C3_relu4_fwd inception30_C3_relu5_fwd 0=160 1=1 11=7 14=3 5=1 6=179200 8=2 9=1
+Convolution              inception30_C3_conv6_fwd 1 1 inception30_C3_relu5_fwd inception30_C3_relu6_fwd 0=160 1=7 11=1 4=3 14=0 5=1 6=179200 8=2 9=1
+Convolution              inception30_C3_conv7_fwd 1 1 inception30_C3_relu6_fwd inception30_C3_relu7_fwd 0=160 1=1 11=7 14=3 5=1 6=179200 8=2 9=1
+Convolution              inception30_C3_conv8_fwd 1 1 inception30_C3_relu7_fwd inception30_C3_relu8_fwd 0=192 1=7 11=1 4=3 14=0 5=1 6=215040 8=2 9=1
+Pooling                  inception30_C3_pool0_fwd 1 1 inception30_C2_concat0_splitncnn_0 inception30_C3_pool0_fwd 0=1 1=3 3=1 5=1
+Convolution              inception30_C3_conv9_fwd 1 1 inception30_C3_pool0_fwd inception30_C3_relu9_fwd 0=192 1=1 5=1 6=147456 8=2 9=1
+Concat                   inception30_C3_concat0   4 1 inception30_C3_relu0_fwd inception30_C3_relu3_fwd inception30_C3_relu8_fwd inception30_C3_relu9_fwd inception30_C3_concat0
+Split                    splitncnn_7              1 4 inception30_C3_concat0 inception30_C3_concat0_splitncnn_0 inception30_C3_concat0_splitncnn_1 inception30_C3_concat0_splitncnn_2 inception30_C3_concat0_splitncnn_3
+Convolution              inception30_C4_conv0_fwd 1 1 inception30_C3_concat0_splitncnn_3 inception30_C4_relu0_fwd 0=192 1=1 5=1 6=147456 8=2 9=1
+Convolution              inception30_C4_conv1_fwd 1 1 inception30_C3_concat0_splitncnn_2 inception30_C4_relu1_fwd 0=192 1=1 5=1 6=147456 8=2 9=1
+Convolution              inception30_C4_conv2_fwd 1 1 inception30_C4_relu1_fwd inception30_C4_relu2_fwd 0=192 1=7 11=1 4=3 14=0 5=1 6=258048 8=2 9=1
+Convolution              inception30_C4_conv3_fwd 1 1 inception30_C4_relu2_fwd inception30_C4_relu3_fwd 0=192 1=1 11=7 14=3 5=1 6=258048 8=2 9=1
+Convolution              inception30_C4_conv4_fwd 1 1 inception30_C3_concat0_splitncnn_1 inception30_C4_relu4_fwd 0=192 1=1 5=1 6=147456 8=2 9=1
+Convolution              inception30_C4_conv5_fwd 1 1 inception30_C4_relu4_fwd inception30_C4_relu5_fwd 0=192 1=1 11=7 14=3 5=1 6=258048 8=2 9=1
+Convolution              inception30_C4_conv6_fwd 1 1 inception30_C4_relu5_fwd inception30_C4_relu6_fwd 0=192 1=7 11=1 4=3 14=0 5=1 6=258048 8=2 9=1
+Convolution              inception30_C4_conv7_fwd 1 1 inception30_C4_relu6_fwd inception30_C4_relu7_fwd 0=192 1=1 11=7 14=3 5=1 6=258048 8=2 9=1
+Convolution              inception30_C4_conv8_fwd 1 1 inception30_C4_relu7_fwd inception30_C4_relu8_fwd 0=192 1=7 11=1 4=3 14=0 5=1 6=258048 8=2 9=1
+Pooling                  inception30_C4_pool0_fwd 1 1 inception30_C3_concat0_splitncnn_0 inception30_C4_pool0_fwd 0=1 1=3 3=1 5=1
+Convolution              inception30_C4_conv9_fwd 1 1 inception30_C4_pool0_fwd inception30_C4_relu9_fwd 0=192 1=1 5=1 6=147456 8=2 9=1
+Concat                   inception30_C4_concat0   4 1 inception30_C4_relu0_fwd inception30_C4_relu3_fwd inception30_C4_relu8_fwd inception30_C4_relu9_fwd inception30_C4_concat0
+Split                    splitncnn_8              1 3 inception30_C4_concat0 inception30_C4_concat0_splitncnn_0 inception30_C4_concat0_splitncnn_1 inception30_C4_concat0_splitncnn_2
+Convolution              inception30_D_conv0_fwd  1 1 inception30_C4_concat0_splitncnn_2 inception30_D_relu0_fwd 0=192 1=1 5=1 6=147456 8=2 9=1
+Convolution              inception30_D_conv1_fwd  1 1 inception30_D_relu0_fwd inception30_D_relu1_fwd 0=320 1=3 3=2 5=1 6=552960 8=2 9=1
+Convolution              inception30_D_conv2_fwd  1 1 inception30_C4_concat0_splitncnn_1 inception30_D_relu2_fwd 0=192 1=1 5=1 6=147456 8=2 9=1
+Convolution              inception30_D_conv3_fwd  1 1 inception30_D_relu2_fwd inception30_D_relu3_fwd 0=192 1=7 11=1 4=3 14=0 5=1 6=258048 8=2 9=1
+Convolution              inception30_D_conv4_fwd  1 1 inception30_D_relu3_fwd inception30_D_relu4_fwd 0=192 1=1 11=7 14=3 5=1 6=258048 8=2 9=1
+Convolution              inception30_D_conv5_fwd  1 1 inception30_D_relu4_fwd inception30_D_relu5_fwd 0=192 1=3 3=2 5=1 6=331776 8=2 9=1
+Pooling                  inception30_D_pool0_fwd  1 1 inception30_C4_concat0_splitncnn_0 inception30_D_pool0_fwd 1=3 2=2 5=1
+Concat                   inception30_D_concat0    3 1 inception30_D_relu1_fwd inception30_D_relu5_fwd inception30_D_pool0_fwd inception30_D_concat0
+Split                    splitncnn_9              1 4 inception30_D_concat0 inception30_D_concat0_splitncnn_0 inception30_D_concat0_splitncnn_1 inception30_D_concat0_splitncnn_2 inception30_D_concat0_splitncnn_3
+Convolution              inception30_E1_conv0_fwd 1 1 inception30_D_concat0_splitncnn_3 inception30_E1_relu0_fwd 0=320 1=1 5=1 6=409600 8=2 9=1
+Convolution              inception30_E1_conv1_fwd 1 1 inception30_D_concat0_splitncnn_2 inception30_E1_relu1_fwd 0=384 1=1 5=1 6=491520 8=2 9=1
+Split                    splitncnn_10             1 2 inception30_E1_relu1_fwd inception30_E1_relu1_fwd_splitncnn_0 inception30_E1_relu1_fwd_splitncnn_1
+Convolution              inception30_E1_conv2_fwd 1 1 inception30_E1_relu1_fwd_splitncnn_1 inception30_E1_relu2_fwd 0=384 1=3 11=1 4=1 14=0 5=1 6=442368 8=2 9=1
+Convolution              inception30_E1_conv3_fwd 1 1 inception30_E1_relu1_fwd_splitncnn_0 inception30_E1_relu3_fwd 0=384 1=1 11=3 14=1 5=1 6=442368 8=2 9=1
+Concat                   inception30_E1_concat0   2 1 inception30_E1_relu2_fwd inception30_E1_relu3_fwd inception30_E1_concat0
+Convolution              inception30_E1_conv4_fwd 1 1 inception30_D_concat0_splitncnn_1 inception30_E1_relu4_fwd 0=448 1=1 5=1 6=573440 8=2 9=1
+Convolution              inception30_E1_conv5_fwd 1 1 inception30_E1_relu4_fwd inception30_E1_relu5_fwd 0=384 1=3 4=1 5=1 6=1548288 8=2 9=1
+Split                    splitncnn_11             1 2 inception30_E1_relu5_fwd inception30_E1_relu5_fwd_splitncnn_0 inception30_E1_relu5_fwd_splitncnn_1
+Convolution              inception30_E1_conv6_fwd 1 1 inception30_E1_relu5_fwd_splitncnn_1 inception30_E1_relu6_fwd 0=384 1=3 11=1 4=1 14=0 5=1 6=442368 8=2 9=1
+Convolution              inception30_E1_conv7_fwd 1 1 inception30_E1_relu5_fwd_splitncnn_0 inception30_E1_relu7_fwd 0=384 1=1 11=3 14=1 5=1 6=442368 8=2 9=1
+Concat                   inception30_E1_concat1   2 1 inception30_E1_relu6_fwd inception30_E1_relu7_fwd inception30_E1_concat1
+Pooling                  inception30_E1_pool0_fwd 1 1 inception30_D_concat0_splitncnn_0 inception30_E1_pool0_fwd 0=1 1=3 3=1 5=1
+Convolution              inception30_E1_conv8_fwd 1 1 inception30_E1_pool0_fwd inception30_E1_relu8_fwd 0=192 1=1 5=1 6=245760 8=2 9=1
+Concat                   inception30_E1_concat2   4 1 inception30_E1_relu0_fwd inception30_E1_concat0 inception30_E1_concat1 inception30_E1_relu8_fwd inception30_E1_concat2
+Split                    splitncnn_12             1 4 inception30_E1_concat2 inception30_E1_concat2_splitncnn_0 inception30_E1_concat2_splitncnn_1 inception30_E1_concat2_splitncnn_2 inception30_E1_concat2_splitncnn_3
+Convolution              inception30_E2_conv0_fwd 1 1 inception30_E1_concat2_splitncnn_3 inception30_E2_relu0_fwd 0=320 1=1 5=1 6=655360 8=2 9=1
+Convolution              inception30_E2_conv1_fwd 1 1 inception30_E1_concat2_splitncnn_2 inception30_E2_relu1_fwd 0=384 1=1 5=1 6=786432 8=2 9=1
+Split                    splitncnn_13             1 2 inception30_E2_relu1_fwd inception30_E2_relu1_fwd_splitncnn_0 inception30_E2_relu1_fwd_splitncnn_1
+Convolution              inception30_E2_conv2_fwd 1 1 inception30_E2_relu1_fwd_splitncnn_1 inception30_E2_relu2_fwd 0=384 1=3 11=1 4=1 14=0 5=1 6=442368 8=2 9=1
+Convolution              inception30_E2_conv3_fwd 1 1 inception30_E2_relu1_fwd_splitncnn_0 inception30_E2_relu3_fwd 0=384 1=1 11=3 14=1 5=1 6=442368 8=2 9=1
+Concat                   inception30_E2_concat0   2 1 inception30_E2_relu2_fwd inception30_E2_relu3_fwd inception30_E2_concat0
+Convolution              inception30_E2_conv4_fwd 1 1 inception30_E1_concat2_splitncnn_1 inception30_E2_relu4_fwd 0=448 1=1 5=1 6=917504 8=2 9=1
+Convolution              inception30_E2_conv5_fwd 1 1 inception30_E2_relu4_fwd inception30_E2_relu5_fwd 0=384 1=3 4=1 5=1 6=1548288 8=2 9=1
+Split                    splitncnn_14             1 2 inception30_E2_relu5_fwd inception30_E2_relu5_fwd_splitncnn_0 inception30_E2_relu5_fwd_splitncnn_1
+Convolution              inception30_E2_conv6_fwd 1 1 inception30_E2_relu5_fwd_splitncnn_1 inception30_E2_relu6_fwd 0=384 1=3 11=1 4=1 14=0 5=1 6=442368 8=2 9=1
+Convolution              inception30_E2_conv7_fwd 1 1 inception30_E2_relu5_fwd_splitncnn_0 inception30_E2_relu7_fwd 0=384 1=1 11=3 14=1 5=1 6=442368 8=2 9=1
+Concat                   inception30_E2_concat1   2 1 inception30_E2_relu6_fwd inception30_E2_relu7_fwd inception30_E2_concat1
+Pooling                  inception30_E2_pool0_fwd 1 1 inception30_E1_concat2_splitncnn_0 inception30_E2_pool0_fwd 0=1 1=3 3=1 5=1
+Convolution              inception30_E2_conv8_fwd 1 1 inception30_E2_pool0_fwd inception30_E2_relu8_fwd 0=192 1=1 5=1 6=393216 8=2 9=1
+Concat                   inception30_E2_concat2   4 1 inception30_E2_relu0_fwd inception30_E2_concat0 inception30_E2_concat1 inception30_E2_relu8_fwd inception30_E2_concat2
+Pooling                  inception30_pool2_fwd    1 1 inception30_E2_concat2 inception30_dropout0_fwd 0=1 1=8 2=8 5=1
+InnerProduct             inception30_dense0_fwd   1 1 inception30_dropout0_fwd output 0=1000 1=1 2=2048000 8=2

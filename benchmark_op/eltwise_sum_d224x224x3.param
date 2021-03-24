@@ -1,0 +1,5 @@
+7767517
+3 4
+Input                    data                     0 1 data 0=224 1=224 2=3
+Split                    splitdata_2              1 2 data data_slitdata_0 data_slitdata_1
+Eltwise                  sum                      2 1 data_slitdata_0 data_slitdata_1 output 0=1

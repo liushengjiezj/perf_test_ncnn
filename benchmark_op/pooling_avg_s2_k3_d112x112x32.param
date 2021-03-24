@@ -1,0 +1,4 @@
+7767517
+2 2
+Input                       data                        0 1 data 0=112 1=112 2=32
+Pooling                     pool6                       1 1 data output 0=1 1=3 2=2
